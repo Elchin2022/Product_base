@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Item Tracker</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Item Tracker</h1>
+      <div class="input-group">
+        <label for="itemName">Item Name:</label>
+        <input type="text" id="itemName" required />
+      </div>
+      <div class="input-group">
+        <label for="itemPrice">Item Price:</label>
+        <input type="number" id="itemPrice" required />
+      </div>
+      <div class="input-group">
+        <label for="itemCategory">Category:</label>
+        <select id="itemCategory" required>
+          <option value="Food">Food</option>
+          <option value="Tech">Tech</option>
+          <option value="Clothing">Clothing</option>
+          <option value="Books">Books</option>
+          <option value="Other">Other</option>
+        </select>
+      </div>
+      <div class="input-group">
+        <label for="itemDate">Purchase Date:</label>
+        <input type="date" id="itemDate" />
+      </div>
+      <div id="currencyConverter">
+        <label for="currencySelect">Select Currency: </label>
+        <select id="currencySelect"></select>
+      </div>
+      <button id="addItemBtn">Add Item</button>
+      <table id="itemTable">
+        <thead>
+          <tr>
+            <th>
+              <button id="sortByName" class="sortBtn">
+                Name <span id="nameArrow">▲</span>
+              </button>
+            </th>
+            <th>
+              <button id="sortByPrice" class="sortBtn">
+                Price <span id="priceArrow">▲</span>
+              </button>
+            </th>
+            <th>
+              <button id="sortByDate" class="sortBtn">
+                Date <span id="dateArrow">▲</span>
+              </button>
+            </th>
+            <th>
+              <button id="sortByCategory" class="sortBtn">
+                Category <span id="categoryArrow">▲</span>
+              </button>
+            </th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+      <div class="summary">
+        <p>Total Items: <span id="totalItems">0</span></p>
+        <p>Total Price: <span id="totalPrice">0.00 AZN</span></p>
+      </div>
+    </div>
+    <h1>Cost Over Time</h1>
+    <div id="chart"></div>
+
+    <script src="script.js"></script>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+  </body>
+</html>
